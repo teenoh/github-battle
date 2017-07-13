@@ -39,7 +39,7 @@ const SelectedLanguage = (props) => {
   
   return (
     <div>
-        <ul className='languages'>
+      <ul className='languages'>
           {languages.map((lang, index) => 
           <li key={index}
             style={lang === props.selectedLanguage ?
@@ -50,7 +50,7 @@ const SelectedLanguage = (props) => {
           )
 
           }
-        </ul>
+      </ul>
       </div>
     )
 }
