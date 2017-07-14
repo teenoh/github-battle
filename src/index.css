@@ -36,6 +36,38 @@ li {
   margin: 20px;
   text-align: center;
 }
+.row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  align-items: center;
+}
+
+.column input {
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.43);
+  font-size: 16px;
+  width: 80%;
+}
+
+.column label {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
+}
+
+.header {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 200;
+}
 
 .space-list-items {
   margin-bottom: 7px
@@ -57,6 +89,19 @@ li {
 
 .active {
   font-weight: bold;
+}
+
+.reset {
+  border: none;
+  background: transparent;
+  color: #d0021b;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.reset:hover {
+  cursor: pointer;
 }
 
 .nav li {
@@ -82,7 +127,7 @@ li {
   padding: 7px 0;
   border-radius: 3px;
   text-align: center;
-  width: 200px;
+  width: 80%;
   padding: 10px auto;
   border: none;
   text-decoration: none;
