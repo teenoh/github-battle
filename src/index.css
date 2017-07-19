@@ -7,9 +7,9 @@ body {
   margin: 0 auto;
 }
 
-.languages{
-  display: flex;
-  justify-content: center
+a {
+  text-decoration: none;
+  color: #d0021b;
 }
 
 ul {
@@ -17,12 +17,49 @@ ul {
 }
 
 li {
-  list-style-type: none
+  list-style-type: none;
+}
+
+.button {
+  color: #e6e6e6;
+  background: #0a0a0a;
+  border: none;
+  font-size: 16px;
+  border-radius: 3px;
+  width: 200px;
+  text-align: center;
+  display: block;
+  padding: 7px 0;
+  margin: 10px auto;
+}
+
+.button:hover:enabled {
+  background: linear-gradient(#1a1a1a,#0a0a0a);
+  color: #fff;
+  text-decoration: none;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.avatar {
+  width: 150px;
+  border-radius: 50%;
+}
+
+.space-list-items {
+  margin-bottom: 7px;
+}
+
+.languages {
+  display: flex;
+  justify-content: center;
 }
 
 .languages li {
   margin: 10px;
-  font-weight:bold;
+  font-weight: bold;
   cursor: pointer;
 }
 
@@ -36,12 +73,36 @@ li {
   margin: 20px;
   text-align: center;
 }
+
+.popular-rank {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav li {
+  margin-right: 15px;
+}
+
+.active {
+  font-weight: bold;
+}
+
 .row {
   display: flex;
   justify-content: space-around;
 }
 
-.column{
+.column {
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -69,28 +130,6 @@ li {
   font-weight: 200;
 }
 
-.space-list-items {
-  margin-bottom: 7px
-}
-
-.avatar {
-  width: 150px;
-  border-radius: 50%;
-}
-
-.popular-rank {
-  margin: 10px;
-  font-size: 20px 
-}
-
-.nav{
-  display: flex;
-}
-
-.active {
-  font-weight: bold;
-}
-
 .reset {
   border: none;
   background: transparent;
@@ -102,43 +141,4 @@ li {
 
 .reset:hover {
   cursor: pointer;
-}
-
-.nav li {
-  margin-right: 15px;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #d0021b;
-}
-
-.home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.button {
-  display: block;
-  color: #e6e6e6;
-  background-color: #0a0a0a;
-  font-size: 15px;
-  padding: 7px 0;
-  border-radius: 3px;
-  text-align: center;
-  width: 80%;
-  padding: 10px auto;
-  border: none;
-  text-decoration: none;
-}
-
-.button:hover:enabled {
-  background: linear-gradient(#1a1a1a, #0a0a0a);
-  color: #fff;
-  text-decoration: none;
-}
-
-.button:active {
-  transform: translateY(1px);
 }
