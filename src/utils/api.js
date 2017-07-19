@@ -42,8 +42,7 @@ const getUserData = (player) => {
       profile: profile,
       score: calculateScores(profile, repo)
     }
-  } 
-  ).catch(handleError)
+  })
 }
 
 const sortPlayers = (players) => {
@@ -54,7 +53,8 @@ const sortPlayers = (players) => {
 export default {
   battle: (players) => {
     return axios.all(players.map(getUserData))
-         .then(sortPlayers)    
+         .then(sortPlayers)
+         .catch(handleError)    
   },
 
   fetchPopularRepos: (lang) => {

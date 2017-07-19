@@ -57,23 +57,26 @@ class Results extends Component {
 
     componentDidMount(){
         const players = queryString.parse(this.props.location.search)
-        console.log(players)
         api.battle([players.playerOneName, players.playerTwoName])
-            .then((res) => {
-                if (res === null){
-                    return this.setState(() => {
-                        error: "It looks like there's an error, check to see if each github names exists"
-                        loading: false
-                    })
+            .then((players) => {
+                if (players === null){
+                    console.log(players)
+                    return this.setState(() => (
+                         { 
+                            error: "It looks like there's an error, check to see if each github names exists",
+                            loading: false,
+                         })
+                    )
                 }
 
-                this.setState(() => {
-                    return {
+                this.setState(() => (
+                    {
                         error: null,
-                        winner: res[0],
-                        loser: res[1]
-                    }
-                })
+                        winner: players[0],
+                        loser: players[1],
+                        loading: false
+                    })
+                )
             })
             //you re meant to add bind(this) if it gives error
     }
@@ -84,7 +87,7 @@ class Results extends Component {
         const winner = this.state.winner
         const loser = this.state.loser
 
-        if (!loading || winner === null || loser === null){
+        if (loading === true){
             return <Loading />
         }
 
