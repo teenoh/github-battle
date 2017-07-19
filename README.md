@@ -1,3 +1,5 @@
+Final project at [Github battle app - teenoh](https://github-battle-947c2.firebaseapp.com/)
+
 <img src="https://tylermcginnis.com/tylermcginnis_glasses-300.png" width="300" align="right">
 
 React Fundamentals Video Project
@@ -5,7 +7,6 @@ React Fundamentals Video Project
 
 #### This is the repository for the project we'll build together during TylerMcGinnis.com's "React Fundamentals" course, for more information on the course see [tylermcginnis.com/courses](https://tylermcginnis.com/courses)
 
-## You can see the final project [here](https://rt-react-fundamentals.firebaseapp.com/)
 
 This is a "Github Battle App". Enter in two Github usernames, and it'll declare a winner. 
 
