@@ -1,7 +1,43 @@
 import React, {Component} from 'react'
 import queryString from 'query-string'
 import api from '../utils/api'
+import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
+import PlayerPreview from './PlayerPreview'
+
+
+const Profile = ({info}) => {
+    return (
+        <PlayerPreview 
+                avatar={info.avatar_url}
+                id={info.label}
+                username={info.login}
+                style={{textAlign: "center"}}
+            >
+            </PlayerPreview>
+    )
+}
+
+Profile.propTypes = {
+    info: PropTypes.object.isRequired
+}
+
+const Player = (props) => {
+    return (
+        <div>
+            <h1 className="header">{props.label}</h1>
+            <h3 style={{textAlign: "center"}}>Score: {props.score}</h3>
+            <Profile info={props.profile}/>
+        </div>
+    )
+}
+
+Player.propTypes = {
+    label: PropTypes.string.isRequired,
+    score: PropTypes.number.isRequired,
+    profile: PropTypes.object.isRequired
+}
+
 
 class Results extends Component {
     constructor(props){
@@ -44,7 +80,7 @@ class Results extends Component {
         const winner = this.state.winner
         const loser = this.state.loser
 
-        if (!loading){
+        if (!loading || winner === null || loser === null){
             return <p>Loading...</p>
         }
 
@@ -57,9 +93,18 @@ class Results extends Component {
             )
         }
 
+        console.log(winner)
         return (
-            <div>
-                {JSON.stringify(this.state, null, 2)}
+            <div className="row">
+                <Player 
+                    label="Winner"
+                    score={winner.score}
+                    profile={winner.profile}/>
+
+                <Player 
+                    label="Loser"
+                    score={loser.score}
+                    profile={loser.profile}/>
             </div>
         )
     }
